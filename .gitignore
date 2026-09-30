@@ -1,0 +1,19 @@
+# Arduino/IDE
+*.o
+*.a
+*.so
+*.ino.hex
+*.ino.bin
+build/
+*.elf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets (if you store credentials)
+secrets.h
