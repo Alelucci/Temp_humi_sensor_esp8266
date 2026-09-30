@@ -40,6 +40,7 @@ Temperature-Humidity_sensor_ESP8622/
   ├── Temp_humi_sensor_esp8266.ino
   └── docs/
     ├── circuit.svg
+    ├── Dashboards.png
     ├── ON.jpg
     └── OFF.jpg
 ```
