@@ -34,13 +34,14 @@ Automated monitoring system for temperature and humidity in a small balcony gree
 
 ## Repo Structure
 
-Sensore\_Temperatura\_Umidita\_esp8266/
+```
+Temp_humi_sensor_esp8266/
   ├── README.md
   ├── .gitignore
-  ├── Sensore\_Temperatura\_Umidita\_esp8266.ino
+  ├── Temp_humi_sensor_esp8266.ino
   └── docs/
     └── circuit.svg
-
+```
 
 ## Circuit scheme
 
@@ -57,9 +58,9 @@ Sensore\_Temperatura\_Umidita\_esp8266/
 1. Clone the repository:
 ```bash
   git clone https://github.com/Alelucci/Temperature-Humidity_sensor_ESP8622
-  cd Sensore_Temperatura_Umidita_esp8266/
+  cd Temp_humi_sensor_esp8266/
 ```
-2. Open `esp8266/temperature\\\_humidity\\\_sensor\\\_esp8266.ino` in Arduino IDE
+2. Open `Temp_humi_sensor_esp8266.ino` in Arduino IDE
 
 3. Install required libraries via Arduino IDE Library Manager
 
@@ -78,7 +79,7 @@ Sensore\_Temperatura\_Umidita\_esp8266/
 ### Local
 - Copy `secrets.h.example` to `secrets.h`
 - Fill with your credentials
-- Upload `esp8266/temperature\\\_humidity\\\_sensor\\\_esp8266.ino` to ESP8266
+- Upload `Temp_humi_sensor_esp8266.ino` to ESP8266
 
 
 ## Usage
