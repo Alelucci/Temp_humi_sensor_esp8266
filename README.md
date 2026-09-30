@@ -79,9 +79,9 @@ Temp_humi_sensor_esp8266/
 3. Copy Write API Key to code
 
 ### Local
-- Copy `secrets.h.example` to `secrets.h`
-- Fill with your credentials
-- Upload `Temp_humi_sensor_esp8266.ino` to ESP8266
+1. Copy `secrets.h.example` to `secrets.h`
+2. Fill with your credentials
+3. Upload `Temp_humi_sensor_esp8266.ino` to ESP8266
 
 
 ## Usage
