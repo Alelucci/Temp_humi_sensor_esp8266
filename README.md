@@ -96,7 +96,7 @@ Temp_humi_sensor_esp8266/
 - Online graphs on ThingSpeak dashboard
 - Updates every 10 minutes (respects ThingSpeak API limits)
 ![Device turned Off](./docs/OFF.jpg) ![Device turned On](./docs/ON.jpg)
-![ThingSpeak Dashboards](./docs/Dashboards)
+![ThingSpeak Dashboards](./docs/Dashboards.png)
 
 ## Future Improvements
 
