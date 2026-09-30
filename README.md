@@ -32,7 +32,7 @@ Automated monitoring system for temperature and humidity in a small balcony gree
   - ESP8266HTTPClient
 
 
-## Repo Structure
+## Folder Structure
 
 ```
 Temp_humi_sensor_esp8266/
@@ -40,12 +40,14 @@ Temp_humi_sensor_esp8266/
   ├── .gitignore
   ├── Temp_humi_sensor_esp8266.ino
   └── docs/
-    └── circuit.svg
+    ├── circuit.svg
+    ├── ON.jpg
+    └── OFF.jpg
 ```
 
 ## Circuit scheme
 
-[ESP8266 Greenhouse Circuit](./docs/circuit.svg)
+![ESP8266 Greenhouse Circuit](./docs/circuit.svg)
 
 ### Connections:
 - \*\*D2-D7\*\*: LCD 16x2 (RS, EN, D4-D7)
@@ -93,6 +95,7 @@ Temp_humi_sensor_esp8266/
 
 - Online graphs on ThingSpeak dashboard
 - Updates every 10 minutes (respects ThingSpeak API limits)
+![Device turned Off](./docs/OFF.jpg) ![Device turned On](./docs/ON.jpg)
 
 ## Future Improvements
 
