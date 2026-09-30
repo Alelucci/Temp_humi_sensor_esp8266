@@ -7,7 +7,7 @@ Automated monitoring system for temperature and humidity in a small balcony gree
 
 - DHT11 sensor for temperature and humidity
 - 16x2 LCD display for live data
-- Data transmission to \*\*ThingSpeak\*\* (online graphs)
+- Data transmission to [ThingSpeak](https://www.thingspeak.com/) (online graphs)
 - Built-in WiFi (ESP8266)
 - Adjustable LCD brightness with potentiometer
 - Power switch for display on/off
@@ -62,7 +62,7 @@ Temp_humi_sensor_esp8266/
   git clone https://github.com/Alelucci/Temperature-Humidity_sensor_ESP8622
   cd Temp_humi_sensor_esp8266/
 ```
-2. Open `Temp_humi_sensor_esp8266.ino` in Arduino IDE
+2. Open [Temp_humi_sensor_esp8266.ino](Temp_humi_sensor_esp8266.ino) in Arduino IDE
 
 3. Install required libraries via Arduino IDE Library Manager
 
@@ -72,14 +72,14 @@ Temp_humi_sensor_esp8266/
 ## Configuration
 
 ### ThingSpeak
-1. Create account at thingspeak.com
+1. Create account at [thingspeak.com](https://www.thingspeak.com/)
 2. Create new channel with:
   - Field 1: Temperature
   - Field 2: Humidity
 3. Copy Write API Key to code
 
 ### Local
-1. Copy `secrets.h.example` to `secrets.h`
+1. Copy [secrets.h.example](secrets.h.example) to `secrets.h`
 2. Fill with your credentials
 3. Upload `Temp_humi_sensor_esp8266.ino` to ESP8266
 
@@ -96,6 +96,7 @@ Temp_humi_sensor_esp8266/
 - Online graphs on ThingSpeak dashboard
 - Updates every 10 minutes (respects ThingSpeak API limits)
 ![Device turned Off](./docs/OFF.jpg) ![Device turned On](./docs/ON.jpg)
+![ThingSpeak Dashboards](./docs/Dashboards)
 
 ## Future Improvements
 
