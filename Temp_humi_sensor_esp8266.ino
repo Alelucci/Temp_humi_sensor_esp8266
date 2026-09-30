@@ -40,8 +40,9 @@ void setup() {
     lcd.setCursor(0, 0);
     printAll("WiFi connected!");
     lcd.setCursor(0, 1);
-    printAll(String("IP: " + WiFi.localIP().toString()).c_str());
+    printAll(String(WiFi.localIP().toString()).c_str());
   } else {
+    lcd.setCursor(0, 0);
     printAll("WiFi failed");
   }
   
