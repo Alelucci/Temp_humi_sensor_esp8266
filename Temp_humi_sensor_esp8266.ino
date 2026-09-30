@@ -69,7 +69,7 @@ void loop() {
     lcd.setCursor(0, 1);
     lcd.print("Humid:   ");
     lcd.print(humidity);
-    lcd.print("%");
+    lcd.print(" %");
     
     cicli++;
     if (cicli >= 300) {
