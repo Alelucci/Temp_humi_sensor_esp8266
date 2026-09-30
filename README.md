@@ -9,7 +9,6 @@ Automated monitoring system for temperature and humidity in a small balcony gree
 - 16x2 LCD display for live data
 - Data transmission to [ThingSpeak](https://www.thingspeak.com/) (online graphs)
 - Built-in WiFi (ESP8266)
-- Adjustable LCD brightness with potentiometer
 - Power switch for display on/off
 
 
