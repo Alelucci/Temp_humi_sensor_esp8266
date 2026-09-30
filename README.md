@@ -34,7 +34,7 @@ Automated monitoring system for temperature and humidity in a small balcony gree
 ## Folder Structure
 
 ```
-Temp_humi_sensor_esp8266/
+Temperature-Humidity_sensor_ESP8622/
   ├── README.md
   ├── .gitignore
   ├── Temp_humi_sensor_esp8266.ino
@@ -59,7 +59,7 @@ Temp_humi_sensor_esp8266/
 1. Clone the repository:
 ```bash
   git clone https://github.com/Alelucci/Temperature-Humidity_sensor_ESP8622
-  cd Temp_humi_sensor_esp8266/
+  cd Temperature-Humidity_sensor_ESP8622/
 ```
 2. Open [Temp_humi_sensor_esp8266.ino](Temp_humi_sensor_esp8266.ino) in Arduino IDE
 
