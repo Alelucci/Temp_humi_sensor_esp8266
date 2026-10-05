@@ -5,7 +5,7 @@
 
 #include "secrets.h"
 
-#define DHTPIN D8
+#define DHTPIN D1
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
