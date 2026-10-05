@@ -12,9 +12,9 @@ DHT dht(DHTPIN, DHTTYPE);
 // LCD pins per ESP8266
 LiquidCrystal lcd(D2, D3, D4, D5, D6, D7);
 
-const char* scriptURL = "api.thingspeak.com";
+const String BASE_URL = "http://api.thingspeak.com/update?api_key="+ String(apiKey);
 
-int cicli = 300;
+int cicli = 299;
 
 void setup() {
   Serial.begin(115200);
@@ -42,6 +42,7 @@ void setup() {
     lcd.setCursor(0, 1);
     printAll(String(WiFi.localIP().toString()).c_str());
   } else {
+    lcd.clear();
     lcd.setCursor(0, 0);
     printAll("WiFi failed");
   }
@@ -51,36 +52,42 @@ void setup() {
 }
 
 void loop() {
-  delay(2000);
-
   float temp = dht.readTemperature();
   float humidity = dht.readHumidity();
 
-  if (!isnan(temp) && !isnan(humidity)) {
-    Serial.print("Temp: ");
-    Serial.print(temp);
-    Serial.print("°C  Humidity: ");
-    Serial.println(humidity);
+  do{
+    delay(2000);
+    temp = dht.readTemperature();
+    humidity = dht.readHumidity();
+
+    if (!isnan(temp) && !isnan(humidity)) {
+      Serial.print("Temp: ");
+      Serial.print(temp);
+      Serial.print("°C  Humidity: ");
+      Serial.println(humidity);
     
-    lcd.setCursor(0, 0);
-    lcd.print("Temp:    ");
-    lcd.print(temp);
-    lcd.print(" C");
+      lcd.setCursor(0, 0);
+      lcd.print("Temp:    ");
+      lcd.print(temp);
+      lcd.print(" C");
     
-    lcd.setCursor(0, 1);
-    lcd.print("Humid:   ");
-    lcd.print(humidity);
-    lcd.print(" %");
-    
-    cicli++;
-    if (cicli >= 300) {
-      sendToThingSpeak(temp, humidity);
-      cicli = 0;
+      lcd.setCursor(0, 1);
+      lcd.print("Humid:   ");
+      lcd.print(humidity);
+      lcd.print(" %");
+   
+    } else {
+      lcd.setCursor(0, 0);
+      printAll("DHT Error");
     }
-  } else {
-    lcd.setCursor(0, 0);
-    printAll("DHT Error");
-  }
+  
+    cicli++;
+
+  }while(cicli<300);
+
+  sendToThingSpeak(temp, humidity);
+  cicli = 0;
+
 }
 
 void sendToThingSpeak(float temp, float humidity) {
@@ -92,8 +99,7 @@ void sendToThingSpeak(float temp, float humidity) {
   WiFiClient client;
   HTTPClient http;
   
-  String url = "http://api.thingspeak.com/update?api_key=";
-  url += apiKey;
+  String url = BASE_URL;
   url += "&field1=";
   url += temp;
   url += "&field2=";
