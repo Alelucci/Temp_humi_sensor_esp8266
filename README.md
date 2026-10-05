@@ -51,7 +51,7 @@ Temp_humi_sensor_esp8266/
 
 ### Connections:
 - \*\*D2-D7\*\*: LCD 16x2 (RS, EN, D4-D7)
-- \*\*D8\*\*: DHT11 sensor
+- \*\*D1\*\*: DHT11 sensor
 - \*\*Pin 3 LCD\*\*: Toggle switch (contrast)
 
 
