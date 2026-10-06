@@ -9,10 +9,9 @@
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
-// LCD pins per ESP8266
 LiquidCrystal lcd(D2, D3, D4, D5, D6, D7);
 
-const String BASE_URL = "http://api.thingspeak.com/update?api_key="+ String(apiKey);
+#define NEBU_PIN D0
 
 int cicli = 299;
 
@@ -21,6 +20,10 @@ void setup() {
   delay(1000);
   
   dht.begin();
+
+  pinMode(NEBU_PIN, OUTPUT);
+  digitalWrite(NEBU_PIN, HIGH);
+
   lcd.begin(16, 2);
   
   printAll("Connecting to");
@@ -28,7 +31,7 @@ void setup() {
   printAll(ssid);
   
   WiFi.begin(ssid, password);
-  int attempts = 0, dots=0;
+  int attempts = 0;
   
   while (WiFi.status() != WL_CONNECTED && attempts < 30) {
     delay(500);
@@ -52,6 +55,7 @@ void setup() {
 }
 
 void loop() {
+  lcd.clear();
   float temp = dht.readTemperature();
   float humidity = dht.readHumidity();
 
@@ -87,6 +91,12 @@ void loop() {
 
   sendToThingSpeak(temp, humidity);
   cicli = 0;
+
+  if (humidity < humi_min) {
+    digitalWrite(NEBU_PIN, LOW);
+  } else if (humidity > humi_max) {
+    digitalWrite(NEBU_PIN, HIGH);
+  }
 
 }
 
